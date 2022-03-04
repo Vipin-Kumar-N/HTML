@@ -1,0 +1,15 @@
+.name
+{
+    text-transform: uppercase;
+}
+.text
+{
+    text-decoration: underline;
+}
+body
+{
+    background-image: url("../images/2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
