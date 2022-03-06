@@ -1,0 +1,42 @@
+table{
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px ;
+    background: red;
+    border: 3px solid white;
+    border-radius: 2px;
+}
+.v2{
+    height: 200px;
+    width: 300px;
+    background-color: aqua;
+    padding-left: 20px;
+}
+td{
+    color: blueviolet;
+    background-color: aquamarine;
+    border-radius: 3px;
+    text-align: center;
+    border: solid greenyellow;
+}
+th{
+    text-align: center;
+    padding: 10px;
+    border: 3px solid black;
+}
+button{
+    color: brown;
+    background-color: beige;
+    font-size: 20px;
+    padding-left: 10%;
+    border: 5px solid black;
+    border-radius: 5px;  
+    text-align: center; 
+}
+#vi{
+    padding-left: 20px;
+}
+img{
+    border-radius: 5px;
+    padding-left: 50px;
+}
