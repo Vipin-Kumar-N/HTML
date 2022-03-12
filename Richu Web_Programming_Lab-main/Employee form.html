@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body{
+           background-image: linear-gradient(to right, rgba(255, 0, 0, 0.555) , rgba(255, 255, 0, 0.486));
+        }
+        
+        .main{
+            background-color: rgb(255, 255, 255);
+            border: 2px solid;
+            border-radius: 12px;
+        }
+
+        table{
+            width: 100%;
+            border-spacing: 10px;
+            background-color: rgb(152, 255, 215);
+            font-size: 16px;
+        }
+
+        input{
+            width: 100%;
+            font-size: 16px;
+        }
+
+        #calcbutt{
+            width: 100%;
+            background-image: url("Images/love-paint.png");
+            background-position: center;
+            background-attachment: fixed;
+            font-size: 16px;
+            font-weight: 900;
+            color: aliceblue;
+        }
+
+        #calcbutt:hover{
+            color: blue;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        
+        function calc()
+        {
+            var UBP, UNAME, UID, UDESG;
+            var DA, HRA, GP, PF, TAX, DEDUCTION, NETPAY;
+            
+            UNAME = document.formdata.name.value;
+            UID = document.formdata.id.value;
+            UDESG = document.formdata.desc.value;
+            UBP = document.formdata.UBP.value;
+
+            DA = UBP * 0.5;
+            HRA = UBP * 0.5;
+            GP = UBP + DA +  HRA;
+            PF = GP * 0.02;
+            TAX = GP * 0.01;
+            DEDUCTION = TAX + PF;
+            NETPAY = GP - DEDUCTION;
+            
+            document.formdata.da.value = DA;
+            document.formdata.hra.value = HRA;
+            document.formdata.gp.value = GP;
+            document.formdata.pf.value = PF;
+            document.formdata.tax.value = TAX;
+            document.formdata.deduction.value = DEDUCTION;
+            document.formdata.netpay.value = NETPAY;
+
+            if(UNAME == ""){
+                window.alert("Please Enter The User Name");
+                document.formdata.name.focus();
+                return false;           
+            }
+            else if(UID == ""){
+                window.alert("Please Enter The User ID");
+                document.formdata.id.focus();
+                return false; 
+            }
+            else if(UDESG == ""){
+                window.alert("Please Enter The Designation");
+                document.formdata.desc.focus();
+                return false; 
+            }
+            else if (UBP == ""){
+                window.alert("Please Enter The Basic Pay");
+                document.formdata.UBP.focus();
+                return false; 
+            }
+            else{
+                window.alert("Validation Successfully"); 
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">EMPLOYEE TABLE</h1>
+    <div class="main">
+        <form action="#" name="formdata" class="formpart">
+            <center>
+                <table border="3px solid">
+                    <tr>
+                        <td><b>NAME: </b></td>
+                        <td><input type="text" name="name" id="namef" placeholder="Enter your name" maxlenght="30" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>USER ID:</b> </td>
+                        <td><input type="text" name="id" id="idf" placeholder="Enter the user id" maxlenght="12" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>DESIGNATION</b></td>
+                        <td><input type="text" name="desc" id="descf" placeholder="Enter the designation" maxlenght="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>BASIC PAY</b></td>
+                        <td><input type="number" name="UBP" id="bpayf" placeholder="Enter the basic amount" maxlenght="6"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" name="calculate" value="CALCULATE" onclick="calc()" id="calcbutt">
+                            <!-- <button name="calculate" value="CALCULATE" onclick="calc()">CHECK</button> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dearness Allowance</td> 
+                        <td><input type="text" name="da"></td>
+                    </tr>
+                    <tr>
+                        <td>House Rent Allowance</td> 
+                        <td><input type="text" name="hra"></td>
+                    </tr>
+                    <tr>
+                        <td>GP</td> 
+                        <td><input type="text" name="gp"></td>
+                    </tr>
+                    <tr>
+                        <td>Provident Fund</td> 
+                        <td><input type="text" name="pf"></td>
+                    </tr>
+                    <tr>
+                        <td>TAX</td> 
+                        <td><input type="text" name="tax"></td>
+                    </tr>
+                    <tr>
+                        <td>Deduction</td> 
+                        <td><input type="text" name="deduction"></td>
+                    </tr>
+                    <tr>
+                        <td>NetPay</td> 
+                        <td><input type="text" name="netpay"></td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+    </div>
+    <div class="toggle">
+        <button onclick="dark()">Toggle</button>
+    </div>
+
+</body>
+</html>
